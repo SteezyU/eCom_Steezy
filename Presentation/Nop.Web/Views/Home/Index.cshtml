@@ -1,0 +1,308 @@
+﻿@using Nop.Services.Localization
+@using Nop.Core
+@inject ILocalizationService localizationService
+@inject IStoreContext storeContext
+
+@{
+    Layout = "_ColumnsOne";
+
+    var homepageTitle = await localizationService.GetLocalizedAsync(await storeContext.GetCurrentStoreAsync(), s => s.HomepageTitle);
+
+    //title
+    if (!string.IsNullOrEmpty(homepageTitle))
+    {
+        NopHtml.AddTitleParts(homepageTitle);
+    }
+
+    var homepageDescription = await localizationService.GetLocalizedAsync(await storeContext.GetCurrentStoreAsync(), s => s.HomepageDescription);
+
+    //meta
+    if (!string.IsNullOrEmpty(homepageDescription))
+    {
+        NopHtml.AddMetaDescriptionParts(homepageDescription);
+    }
+
+    //page class
+    NopHtml.AppendPageCssClassParts("html-home-page");
+}
+
+<div class="page home-page">
+    <div class="banner-wrapper">
+        <div class="banner-slider">
+            <div class="banner-slide">
+                <img src="~/themes/defaultclean/content/images/steezy/banner1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="home-category p-3">
+        <div class="container-fluid p-0">
+            <div class="home-cat-cont">
+                <div class="home-cat-wrap">
+                    <a href="#" class="home-cat-box">
+                        <img src="~/themes/defaultclean/content/images/steezy/category/rings.jpg" alt="">
+                        <span>Shop Rings</span>
+                    </a>
+                </div>
+                <div class="home-cat-wrap middle">
+                    <div class="home-cat-mid-1">
+                        <a href="#" class="home-cat-box">
+                            <img src="~/themes/defaultclean/content/images/steezy/category/bracelets.jpg" alt="">
+                            <span>Shop Bracelets</span>
+                        </a>
+                    </div>
+                    <div class="home-cat-mid-2">
+                        <a href="#" class="home-cat-box">
+                            <img src="~/themes/defaultclean/content/images/steezy/category/necklaces.jpg" alt="">
+                            <span>Shop Necklaces</span>
+                        </a>
+                        <a href="#" class="home-cat-box">
+                            <img src="~/themes/defaultclean/content/images/steezy/category/earrings.jpg" alt="">
+                            <span>Shop Earrings</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-cat-wrap">
+                    <a href="#" class="home-cat-box">
+                        <img src="~/themes/defaultclean/content/images/steezy/category/charm.jpg" alt="">
+                        <span>Shop Charm</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="trending-product py-5">
+        <div class="container-fluid">
+            <h2 class="heading">Trending Products</h2>
+            <div class="trending-slider">
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="full-promo">
+        <img src="~/themes/defaultclean/content/images/steezy/promotion/promotion.png" alt="">
+    </div>
+
+    <div class="category-product py-5">
+        <div class="container">
+            <h2 class="heading">Rings</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="full-promo">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="~/themes/defaultclean/content/images/steezy/promotion/promotion-half.png" alt="">
+                </div>
+                <div class="col-md-4">
+                    <img src="~/themes/defaultclean/content/images/steezy/promotion/promotion-half.png" alt="">
+                </div>
+                <div class="col-md-4">
+                    <img src="~/themes/defaultclean/content/images/steezy/promotion/promotion-half.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-product py-5">
+        <div class="container">
+            <h2 class="heading">Bracelets</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageTop })
+    @await Component.InvokeAsync(typeof(TopicBlockViewComponent), new { systemName = "HomepageText" })
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeCategories })
+    @await Component.InvokeAsync(typeof(HomepageCategoriesViewComponent))
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeProducts })
+    @await Component.InvokeAsync(typeof(HomepageProductsViewComponent))
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeBestSellers })
+    @await Component.InvokeAsync(typeof(HomepageBestSellersViewComponent))
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeNews })
+    @await Component.InvokeAsync(typeof(HomepageNewsViewComponent))
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforePoll })
+    @await Component.InvokeAsync(typeof(HomepagePollsViewComponent))
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBottom })
+
+
+</div>
+
+
+@* <div class="page home-page">
+    <div class="page-body">
+        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageTop })
+        @await Component.InvokeAsync(typeof(TopicBlockViewComponent), new { systemName = "HomepageText" })
+        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeCategories })
+        @await Component.InvokeAsync(typeof(HomepageCategoriesViewComponent))
+        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeProducts })
+        @await Component.InvokeAsync(typeof(HomepageProductsViewComponent))
+        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeBestSellers })
+        @await Component.InvokeAsync(typeof(HomepageBestSellersViewComponent))
+        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeNews })
+        @await Component.InvokeAsync(typeof(HomepageNewsViewComponent))
+        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforePoll })
+        @await Component.InvokeAsync(typeof(HomepagePollsViewComponent))
+        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBottom })
+    </div>
+</div> *@

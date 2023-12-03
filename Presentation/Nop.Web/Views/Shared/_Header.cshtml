@@ -1,0 +1,68 @@
+﻿<div class="header">
+    <div class="header-top">
+        <div class="container">
+            <p>Free Delivery on Order Above Rs. 499 | 100% Secure Checkout</p>
+            <ul class="social">
+                <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/facebook-white.png" alt=""></a></li>
+                <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/whatsapp-white.png" alt=""></a></li>
+                @* <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/instagram-white.png" alt=""></a></li> *@
+                <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/twitter-white.png" alt=""></a></li>
+                <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/youtube-white.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HeaderBefore })
+    <div class="header-bottom-wrapper">
+        <div class="container">
+            <div class="header-bottom">
+                <div class="header-logo">
+                    @await Component.InvokeAsync(typeof(LogoViewComponent))
+                </div>
+                <ul class="header-menu">
+                    <li><a href="/necklace">Necklace </a></li>
+                    <li><a href="/earrings">Earrings </a></li>
+                    <li><a href="/bangles">Bangles </a></li>
+                    <li><a href="/anklets">Anklets </a></li>
+                    <li><a href="/bags">Bags </a></li>
+                </ul>
+                <div class="header-links-wrapper">
+                    <div class="search-icon"><img src="~/themes/defaultclean/content/images/steezy/icons/search-white.png" alt=""></div>
+                    @await Component.InvokeAsync(typeof(HeaderLinksViewComponent))
+                    @* @await Component.InvokeAsync(typeof(FlyoutShoppingCartViewComponent)) *@
+                </div>
+                @* <div class="header-selectors-wrapper">
+                    @await Component.InvokeAsync(typeof(TaxTypeSelectorViewComponent))
+                    @await Component.InvokeAsync(typeof(CurrencySelectorViewComponent))
+                    @await Component.InvokeAsync(typeof(LanguageSelectorViewComponent))
+                    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HeaderSelectors })
+                </div> *@
+                
+                <div class="search-box store-search-box">
+                    <div class="container">
+                        <div class="search-container">
+                            @await Component.InvokeAsync(typeof(SearchBoxViewComponent))
+                            <span class="search-close"><img src="~/themes/defaultclean/content/images/steezy/icons/close-white.png" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HeaderMiddle })
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HeaderAfter })
+</div>
+
+
+<script>
+$(".search-icon").click(function(){
+    $(".search-box").toggle();
+})
+
+$(".search-close").click(function(){
+    $(".search-box").hide();
+})
+
+$(".user-icon").click(function(){
+    $(".user-dropdown").toggle();
+})
+</script>
