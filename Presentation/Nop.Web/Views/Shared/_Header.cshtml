@@ -16,6 +16,7 @@
         <div class="container">
             <div class="header-bottom">
                 <div class="header-logo">
+                    <div class="hamberger"><img src="~/themes/defaultclean/content/images/steezy/icons/menu.png" alt=""></div>
                     @await Component.InvokeAsync(typeof(LogoViewComponent))
                 </div>
                 <ul class="header-menu">
@@ -56,6 +57,7 @@
 <script>
 $(".search-icon").click(function(){
     $(".search-box").toggle();
+    $(".user-dropdown").hide();
 })
 
 $(".search-close").click(function(){
@@ -64,5 +66,15 @@ $(".search-close").click(function(){
 
 $(".user-icon").click(function(){
     $(".user-dropdown").toggle();
+    $(".search-box").hide();
+})
+
+$(".hamberger").click(function(){
+    $(".header-bottom-wrapper").prepend("<div class='overlay'></di>")
+    $(".header-menu").animate({left: 0}, 100)
+})
+$(document).on('click', '.overlay', function(){
+    $(this).remove()
+    $(".header-menu").animate({left: -250}, 100)
 })
 </script>

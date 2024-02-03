@@ -6,21 +6,21 @@
 @{
     Layout = "_ColumnsOne";
 
-    //var homepageTitle = await localizationService.GetLocalizedAsync(await storeContext.GetCurrentStoreAsync(), s => s.HomepageTitle);
+    var homepageTitle = await localizationService.GetLocalizedAsync(await storeContext.GetCurrentStoreAsync(), s => s.HomepageTitle);
 
     //title
-   // if (!string.IsNullOrEmpty(homepageTitle))
-   // {
-   //     NopHtml.AddTitleParts(homepageTitle);
-   // }
+    if (!string.IsNullOrEmpty(homepageTitle))
+    {
+        NopHtml.AddTitleParts(homepageTitle);
+    }
 
-    //var homepageDescription = await localizationService.GetLocalizedAsync(await storeContext.GetCurrentStoreAsync(), s => s.HomepageDescription);
+    var homepageDescription = await localizationService.GetLocalizedAsync(await storeContext.GetCurrentStoreAsync(), s => s.HomepageDescription);
 
     //meta
-    // if (!string.IsNullOrEmpty(homepageDescription))
-    // {
-    //     NopHtml.AddMetaDescriptionParts(homepageDescription);
-    // }
+    if (!string.IsNullOrEmpty(homepageDescription))
+    {
+        NopHtml.AddMetaDescriptionParts(homepageDescription);
+    }
 
     //page class
     NopHtml.AppendPageCssClassParts("html-home-page");
@@ -35,28 +35,28 @@
         </div>
     </div>
 
-    <div class="home-category p-3">
+    <div class="home-category py-3">
         <div class="container-fluid p-0">
             <div class="home-cat-cont">
                 <div class="home-cat-wrap">
-                    <a href="/rings" class="home-cat-box">
+                    <a href="#" class="home-cat-box">
                         <img src="~/themes/defaultclean/content/images/steezy/category/rings.jpg" alt="">
                         <span>Shop Rings</span>
                     </a>
                 </div>
                 <div class="home-cat-wrap middle">
                     <div class="home-cat-mid-1">
-                        <a href="/bracelet" class="home-cat-box">
+                        <a href="#" class="home-cat-box">
                             <img src="~/themes/defaultclean/content/images/steezy/category/bracelets.jpg" alt="">
                             <span>Shop Bracelets</span>
                         </a>
                     </div>
                     <div class="home-cat-mid-2">
-                        <a href="/necklace" class="home-cat-box">
+                        <a href="#" class="home-cat-box">
                             <img src="~/themes/defaultclean/content/images/steezy/category/necklaces.jpg" alt="">
                             <span>Shop Necklaces</span>
                         </a>
-                        <a href="/earrings" class="home-cat-box">
+                        <a href="#" class="home-cat-box">
                             <img src="~/themes/defaultclean/content/images/steezy/category/earrings.jpg" alt="">
                             <span>Shop Earrings</span>
                         </a>
@@ -77,64 +77,63 @@
             <h2 class="heading">Trending Products</h2>
             <div class="trending-slider">
                 <div class="product-box">
-                    <a href="/ruhana-long-necklace" class="product-img">
-                        <img src="~/images/thumbs/0000152_ruhana-long-necklace_550.jpeg" alt="">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
                     </a>
                     <div class="product-text">
-                        <h3><a href="/ruhana-long-necklace">Ruhana Long Necklace</a></h3>
-                        <p>Unleash your inner fashion visionary with our fashion-forward designer jewelry collection.</p>
-                        <h4 class="price"><span>₹ 600 |</span> ₹ 500</h4>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <a href="/black-oxidised-jhumka" class="product-img">
-                        <img src="~/images/thumbs/0000100_black-oxidised-jhumka_415.jpeg" alt="">
-                    </a>
-                    <div class="product-text">
-                        <h3><a href="/black-oxidised-jhumka">Black Oxidised Jhumka</a></h3>
-                        <p>Black Polish oxidised jhumka with kundan work .</p>
-                        <h4 class="price"><span>₹ 250 |</span> ₹ 220</h4>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <a href="/white-pearl-set" class="product-img">
-                        <img src="~/images/thumbs/0000162_suhani-choker_550.jpeg" alt="">
-                    </a>
-                    <div class="product-text">
-                        <h3><a href="/white-pearl-set">White Pearl Set</a></h3>
-                        <p>Beautiful white beads and pearl necklace set with earring , choker and mang tika.</p>
-                        <h4 class="price"><span>₹ 550 |</span> ₹ 500</h4>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <a href="/green-emblished-choker" class="product-img">
-                        <img src="~/images/thumbs/0000159_green-emblished-choker.jpeg" alt="">
-                    </a>
-                    <div class="product-text">
-                        <h3><a href="/green-emblished-choker">Green Emblished Choker</a></h3>
-                        <p>Green Emblished kundan choker Unleash your inner fashion visionary with our fashion-forward designer jewelry collection.</p>
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
                         <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
                     </div>
                 </div>
                 <div class="product-box">
-                    <a href="/pearl-ring" class="product-img">
-                        <img src="~/images/thumbs/0000142_pearl-ring_550.jpeg" alt="">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
                     </a>
                     <div class="product-text">
-                        <h3><a href="/pearl-ring">Pearl Ring</a></h3>
-                        <p>Pearl silver adjustable premium ring.</p>
-                        <h4 class="price"><span>₹ 199 |</span> ₹ 149</h4>
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
                     </div>
                 </div>
                 <div class="product-box">
-                    <a href="/black-monalisa-earrings" class="product-img">
-                        <img src="~/images/thumbs/0000112_black-monalisa-earrings_415.jpeg" alt="">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
                     </a>
                     <div class="product-text">
-                        <h3><a href="/black-monalisa-earrings">Black Monalisa Earrings</a></h3>
-                        <p>Beautifully handmade earrings with brass and monalisa stone.</p>
-                        <h4 class="price"><span>₹ 400 |</span> ₹ 350</h4>
-                        <button type="button" id="add-to-cart-button-53" class="button-1 add-to-cart-button" data-productid="53" onclick="return AjaxCart.addproducttocart_details(&quot;/addproducttocart/details/53/1&quot;,&quot;#product-details-form&quot;),!1">Add to cart</button>
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                    </div>
+                </div>
+                <div class="product-box">
+                    <a href="" class="product-img">
+                        <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                    </a>
+                    <div class="product-text">
+                        <h3><a href="#">Earrings</a></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                        <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
                     </div>
                 </div>
             </div>
@@ -148,52 +147,52 @@
     <div class="category-product py-5">
         <div class="container">
             <h2 class="heading">Rings</h2>
-            <div class="row g-3">
-                <div class="col-lg-3 col-6">
+            <div class="row">
+                <div class="col-md-3">
                     <div class="product-box">
-                        <a href="/sitara-ring" class="product-img">
-                            <img src="~/images/thumbs/0000141_sitara-ring_550.jpeg" alt="">
-                        </a>
-                        <div class="product-text">
-                            <h3><a href="/sitara-ring">Sitara Ring</a></h3>
-                            <p>Sitara silver replica adjustable ring is of premium range of ring.</p>
-                            <h4 class="price"><span>₹ 200 |</span> ₹ 150</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="product-box">
-                        <a href="/pearl-ring" class="product-img">
-                            <img src="~/images/thumbs/0000142_pearl-ring_550.jpeg" alt="">
-                        </a>
-                        <div class="product-text">
-                            <h3><a href="/pearl-ring">Pearl Ring</a></h3>
-                            <p>Pearl silver adjustable premium ring.</p>
-                            <h4 class="price"><span>₹ 200 |</span> ₹ 149</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="product-box">
-                        <a href="/oxidised-combo-ring-and-earring-" class="product-img">
-                            <img src="~/images/thumbs/0000161_oxidised-combo-ring-and-earring-_550.jpeg" alt="">
-                        </a>
-                        <div class="product-text">
-                            <h3><a href="/oxidised-combo-ring-and-earring-">Oxidised Combo</a></h3>
-                            <p>Unleash your inner fashion visionary with our fashion-forward designer jewelry collection.</p>
-                            <h4 class="price"><span>₹ 300 |</span> ₹ 250</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <div class="product-box">
-                        <a href="/karma-ring-grey" class="product-img">
+                        <a href="" class="product-img">
                             <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
                         </a>
                         <div class="product-text">
-                            <h3><a href="/karma-ring-grey">Karma Ring</a></h3>
-                            <p>Beautiful Karma Ring silver replica available in different shades.</p>
-                            <h4 class="price"><span>₹ 200 |</span> ₹ 149</h4>
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-box">
+                        <a href="" class="product-img">
+                            <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
+                        </a>
+                        <div class="product-text">
+                            <h3><a href="#">Earrings</a></h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab eos dolorum labore ipsum vel, illum ad pariatur necessitatibus dolores perferendis, velit nemo quidem rerum sit, voluptas voluptate cupiditate numquam.</p>
+                            <h4 class="price"><span>₹ 200 |</span> ₹ 180</h4>
                         </div>
                     </div>
                 </div>
@@ -204,13 +203,13 @@
     <div class="full-promo">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <img src="~/themes/defaultclean/content/images/steezy/promotion/promotion-half.png" alt="">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <img src="~/themes/defaultclean/content/images/steezy/promotion/promotion-half.png" alt="">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <img src="~/themes/defaultclean/content/images/steezy/promotion/promotion-half.png" alt="">
                 </div>
             </div>
@@ -220,8 +219,8 @@
     <div class="category-product py-5">
         <div class="container">
             <h2 class="heading">Bracelets</h2>
-            <div class="row g-3">
-                <div class="col-lg-3 col-6">
+            <div class="row">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="" class="product-img">
                             <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
@@ -233,7 +232,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="" class="product-img">
                             <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
@@ -245,7 +244,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="" class="product-img">
                             <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
@@ -257,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-3">
                     <div class="product-box">
                         <a href="" class="product-img">
                             <img src="~/themes/defaultclean/content/images/steezy/product/earring.jpg" alt="">
@@ -272,8 +271,17 @@
             </div>
         </div>
     </div>
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageTop })
+    @await Component.InvokeAsync(typeof(TopicBlockViewComponent), new { systemName = "HomepageText" })
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeCategories })
+    @await Component.InvokeAsync(typeof(HomepageCategoriesViewComponent))
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeProducts })
     @await Component.InvokeAsync(typeof(HomepageProductsViewComponent))
     @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBeforeBestSellers })
+    @await Component.InvokeAsync(typeof(HomepageBestSellersViewComponent))
+   
+    @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.HomepageBottom })
+
 
 </div>
 @* <div class="page home-page">

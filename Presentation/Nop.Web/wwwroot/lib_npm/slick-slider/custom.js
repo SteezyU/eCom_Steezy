@@ -14,21 +14,24 @@ $(document).ready(function(){
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
         }
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          dots: true,
+          arrows: false
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false
         }
       }
       // You can unslick at a given breakpoint now by adding:
@@ -36,4 +39,16 @@ $(document).ready(function(){
       // instead of a settings object
     ]
   });
+
+
+  $(".filter-btn").click(function(){
+    $("body").prepend("<div class='category-overlay'></div>")
+    $(".side-2").animate({left: 0}, 100)
+  })
+  $(document).on("click", ".category-overlay", function(){
+    $(this).remove()
+    $(".side-2").animate({left: -250}, 100)
+  })
 })
+
+
