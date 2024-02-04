@@ -172,7 +172,7 @@ label, label + * {
     
 }
 .social li a img {
-    width: 15px;
+    width: 25px;
 }
 .social li a {
     transition: .3s;
