@@ -111,12 +111,13 @@
                     <strong>@T("Footer.FollowUs")</strong>
                 </div>
                 <ul class="social justify-content-start">
-                    <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/facebook-white.png" alt=""></a></li>
-                    <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/whatsapp-white.png" alt=""></a></li>
-                    <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/twitter-white.png" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/share/ActkpYi2r6B4WjVv/?mibextid=%22%22" target="_blank"><img src="~/themes/defaultclean/content/images/steezy/icons/facebook-white.png" alt=""></a></li>
+                    <li><a href="https://www.instagram.com/steezy_you?igsh=enR3cTFhYTM5MGo0&utm_source=qr" target="_blank"><img src="~/themes/defaultclean/content/images/steezy/icons/instagram-white.png" alt=""></a></li>
+                </ul>
+                    @* <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/twitter-white.png" alt=""></a></li>
                     <li><a href="#"><img src="~/themes/defaultclean/content/images/steezy/icons/youtube-white.png" alt=""></a></li>
                 </ul>
-                @* <div class="social">
+                 <div class="social">
                     @await Component.InvokeAsync(typeof(SocialButtonsViewComponent))
                 </div> *@
             </div>
@@ -131,14 +132,12 @@
                         @T(inclTax ? "Footer.TaxShipping.InclTax" : "Footer.TaxShipping.ExclTax", Url.RouteTopicUrl("shippinginfo"))
                     </span>
                 }
-                @* @if (!Model.HidePoweredByNopCommerce)
+                @if (!Model.HidePoweredByNopCommerce)
                 {
                     <div class="footer-powered-by">
-                        Would you like to remove the "Powered by nopCommerce" link in the bottom of the footer?
-                            Please find more info at https://www.nopcommerce.com/nopcommerce-copyright-removal-key
                         Powered by <a href="@(OfficialSite.Main)" target="_blank" @(Model.IsHomePage ? string.Empty : "rel=nofollow")>nopCommerce</a>
                     </div>
-                } *@
+                }
                 @await Component.InvokeAsync(typeof(StoreThemeSelectorViewComponent))
             </div>
         </div>
