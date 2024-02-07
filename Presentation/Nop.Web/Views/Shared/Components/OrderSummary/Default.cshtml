@@ -27,88 +27,16 @@
         }
         @*we add enctype = "multipart/form-data" because "File upload" attribute control type requires it*@
         <form asp-route="ShoppingCart" method="post" enctype="multipart/form-data" id="shopping-cart-form">
-            <div class="table-wrapper">
-                <table class="cart cart-table">
-                    <colgroup>
-                        @if (Model.ShowSku)
-                        {
-                            <col width="1" />
-                        }
-                        @if (Model.ShowProductImages)
-                        {
-                            <col width="1" />
-                        }
-                        <col />
-                        @if (Model.ShowVendorName)
-                        {
-                            <col width="1" />
-                        }
-                        <col width="1" />
-                        <col width="1" />
-                        <col width="1" />
-                        @if (Model.IsEditable)
-                        {
-                            <col width="1" />
-                        }
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            @if (Model.ShowSku)
-                            {
-                                <th class="sku">
-                                    @T("ShoppingCart.SKU")
-                                </th>
-                            }
-                            @if (Model.ShowProductImages)
-                            {
-                                <th class="product-picture">
-                                    @T("ShoppingCart.Image")
-                                </th>
-                            }
-                            <th class="product">
-                                @T("ShoppingCart.Product(s)")
-                            </th>
-                            @if (Model.ShowVendorName)
-                            {
-                                <th class="vendor">
-                                    @T("ShoppingCart.VendorName")
-                                </th>
-                            }
-                            <th class="unit-price">
-                                @T("ShoppingCart.UnitPrice")
-                            </th>
-                            <th class="quantity">
-                                @T("ShoppingCart.Quantity")
-                            </th>
-                            <th class="subtotal">
-                                @T("ShoppingCart.ItemTotal")
-                            </th>
-                            @if (Model.IsEditable)
-                            {
-                                <th class="remove-from-cart">
-                                    @T("ShoppingCart.Remove")
-                                </th>
-                            }
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.Items)
-                        {
-                            <tr>
-                                @if (Model.ShowSku)
-                                {
-                                    <td class="sku">
-                                        @* <label class="td-title">@T("ShoppingCart.SKU"):</label> *@
-                                        <span class="sku-number">@item.Sku</span>
-                                    </td>
-                                }
-                                @if (Model.ShowProductImages)
-                                {
-                                    <td class="product-picture">
-                                        <a href="@(Url.RouteUrl<Product>(new { SeName = item.ProductSeName }))"><img alt="@item.Picture.AlternateText" src="@item.Picture.ImageUrl" title="@item.Picture.Title" /></a>
-                                    </td>
-                                }
-                                <td class="product">
+            <div class="cart-wrapper">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="cart-box">
+                        <div class="cart-box-img">
+                            <a href="@(Url.RouteUrl<Product>(new { SeName = item.ProductSeName }))"><img alt="@item.Picture.AlternateText" src="@item.Picture.ImageUrl" title="@item.Picture.Title" /></a>
+                        </div>
+                        <div class="cart-box-text">
+                            <div class="cart-box-top">
+                                <div class="cart-item-name">
                                     <a href="@(Url.RouteUrl<Product>(new { SeName = item.ProductSeName }))" class="product-name">@item.ProductName</a>
                                     @if (!string.IsNullOrEmpty(item.AttributeInfo))
                                     {
@@ -147,20 +75,29 @@
                                             </ul>
                                         </div>
                                     }
-                                </td>
-                                @if (Model.ShowVendorName)
+                                </div>
+                                @if (Model.IsEditable)
                                 {
-                                    <td class="vendor">
-                                        <label class="td-title">@T("ShoppingCart.VendorName"):</label>
-                                        <span class="vendor-name">@item.VendorName</span>
-                                    </td>
+                                    <div class="remove-from-cart">
+                                        @if (item.DisableRemoval)
+                                        {
+                                            <text>&nbsp;</text>
+                                        }
+                                        else
+                                        {
+                                            <input type="checkbox" name="removefromcart" id="removefromcart@(item.Id)" value="@(item.Id)" aria-label="@T("ShoppingCart.Remove")" />
+                                            <button type="button" name="updatecart" class="remove-btn" onclick="$('#removefromcart@(item.Id)').attr('checked', true); $('#updatecart').click();"><img src="~/themes/defaultclean/content/images/steezy/icons/delete.png" alt=""></button>
+                                        }
+                                    </div>
                                 }
-                                <td class="unit-price">
-                                    @* <label class="td-title">@T("ShoppingCart.UnitPrice"):</label> *@
+                            </div>
+                            <div class="cart-box-bottom">
+                                <div class="cart-unit-price">
+                                    <label class="td-title">@T("ShoppingCart.UnitPrice"):</label>
                                     <span class="product-unit-price">@item.UnitPrice</span>
-                                </td>
-                                <td class="quantity">
-                                    @* <label class="td-title" for="itemquantity@(item.Id)">@T("ShoppingCart.Quantity"):</label> *@
+                                </div>
+                                <div class="cart-qty">
+                                    <label class="td-title" for="itemquantity@(item.Id)">@T("ShoppingCart.Quantity"):</label>
                                     @if (Model.IsEditable)
                                     {
                                         if (item.AllowedQuantities.Count > 0)
@@ -181,9 +118,9 @@
                                     {
                                         <span class="product-quantity">@item.Quantity</span>
                                     }
-                                </td>
-                                <td class="subtotal">
-                                    @* <label class="td-title">@T("ShoppingCart.ItemTotal"):</label> *@
+                                </div>
+                                <div class="subtotal">
+                                    <label class="td-title">@T("ShoppingCart.ItemTotal"):</label>
                                     <span class="product-subtotal">@item.SubTotal</span>
                                     @if (!string.IsNullOrEmpty(item.Discount))
                                     {
@@ -197,25 +134,11 @@
                                             </div>
                                         }
                                     }
-                                </td>
-                                @if (Model.IsEditable)
-                                {
-                                    <td class="remove-from-cart">
-                                        @if (item.DisableRemoval)
-                                        {
-                                            <text>&nbsp;</text>
-                                        }
-                                        else
-                                        {
-                                            <input type="checkbox" name="removefromcart" id="removefromcart@(item.Id)" value="@(item.Id)" aria-label="@T("ShoppingCart.Remove")" />
-                                            <button type="button" name="updatecart" class="remove-btn" onclick="$('#removefromcart@(item.Id)').attr('checked', true); $('#updatecart').click();"><img src="~/themes/defaultclean/content/images/steezy/icons/delete.png" alt=""></button>
-                                        }
-                                    </td>
-                                }
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
             @if (Model.IsEditable && Model.Items.Count > 0 && Model.DisplayTaxShippingInfo)
             {
